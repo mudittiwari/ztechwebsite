@@ -1,0 +1,19 @@
+#maindiv
+{
+    left: 0px;
+    position: relative;
+    top: 300px;
+}
+#middleone
+{
+    position: absolute;
+    top: 828px;
+    left: 193px;
+}
+.careerbox
+{
+    height: 20vw;
+    width: 20vw;
+    border-radius:50%;
+    background-color: black;
+}

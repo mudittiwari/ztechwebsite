@@ -1,0 +1,43 @@
+#upper_navbar
+{
+    height: 50px;
+    /* width: 100vw; */
+    background-color: #EA8A32;
+}
+#upper_navbar_right_list
+{
+    list-style: none;
+}
+#upper_navbar_right_list a
+{
+    text-decoration: none;
+    color: white;
+}
+#lower_navbar
+{
+    height: 150px;
+    background-color: #000000B2;
+    /* opacity: 0.7; */
+
+}
+#lower_navbar::before
+{
+    content: "";
+    background:url("../assets/homepagebackground.png") no-repeat center center/cover;
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    /* opacity: 0.3; */
+    top: 50px;
+    left: 0px;
+    z-index: -1;
+}
+.lower_navbar_list
+{
+    list-style:none;
+}
+.lower_navbar_list a
+{
+    text-decoration: underline;
+    color: #F8841A;
+}

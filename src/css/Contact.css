@@ -1,0 +1,20 @@
+#leftcontact
+{
+    height: 600px;
+    width: 50vw;
+    background-color: #EA8A32;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+}
+#rightcontact
+{
+    position: relative;
+    /* bottom: 30px; */
+    right: 50px;
+    height: 750px;
+    width: 100vw;
+    background-color: #000000;
+    z-index: 0;
+}
