@@ -1,18 +1,37 @@
 import React from 'react';
 import github from '../src/assets/github.png';
 import twitter from '../src/assets/twitter.png';
+import {faFacebookF,faTwitter,faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {faHome} from '@fortawesome/fontawesome-svg-core';
 import '../src/css/Footer.css';
-function Footer()
-{
+function Footer() {
     return (
         <>
-            <div className="w-100 d-flex justify-content-center align-items-center" id="footer">
-                <img className='mx-3' src={github} alt="" />
-                <img className='mx-3' src={twitter} alt="" />
-                <img className='mx-3' src={github} alt="" />
-                <img className='mx-3' src={twitter} alt="" />
-                <img className='mx-3' src={github} alt="" />
-                <img className='mx-3' src={twitter} alt="" />
+            <div id="footer">
+                <div class="wrapper">
+                    <div class="icon facebook">
+                        <div class="tooltip">Facebook</div>
+                        <span><FontAwesomeIcon icon={faFacebookF}/></span>
+                    </div>
+                    <div class="icon twitter">
+                        <div class="tooltip">Twitter</div>
+                        <span><FontAwesomeIcon icon={faTwitter}/></span>
+                    </div>
+                    <div class="icon instagram">
+                        <div class="tooltip">Instagram</div>
+                        <span><FontAwesomeIcon icon={faInstagram}/></span>
+                    </div>
+                    <div class="icon twitter">
+                        <div class="tooltip">Twitter</div>
+                        <span><FontAwesomeIcon icon={faTwitter}/></span>
+                    </div>
+                    <div class="icon instagram">
+                        <div class="tooltip">Instagram</div>
+                        <span><FontAwesomeIcon icon={faInstagram}/></span>
+                    </div>
+                    
+                </div>
             </div>
         </>
     );

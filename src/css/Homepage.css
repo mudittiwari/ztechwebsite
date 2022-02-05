@@ -1,3 +1,4 @@
+
 #maindiv
 {
     left: 0px;
@@ -16,4 +17,61 @@
     width: 20vw;
     border-radius:50%;
     background-color: black;
+}
+
+#mainslider
+{
+    position: relative;
+    top: 200px;
+    width: 100vw;
+    overflow: hidden;
+}
+#slider
+{
+    width: 400vw;
+    position: relative;
+    animation-name:moveslider;
+    right: 0vw;
+    animation-duration: 21s;
+    animation-iteration-count: infinite;
+}
+#slider img
+{
+    width: 100vw;
+}
+
+@keyframes moveslider
+{
+    0%
+    {
+        right:0vw;
+    }
+    23%
+    {
+        right: 0vw;
+    }
+    33%
+    {
+        right: 100vw;
+    }
+    56%
+    {
+        right:100vw;
+    }
+    66%
+    {
+        right: 200vw;
+    }
+    90%
+    {
+        right: 200vw;
+    }
+    99%
+    {
+        right: 300vw;
+    }
+    100%
+    {
+        right: 0vw;
+    }
 }

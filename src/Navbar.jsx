@@ -5,48 +5,80 @@ import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import Navlink from 'react-router-dom';
 import homepagebackground from  '../src/assets/homepagebackground.png';
+import { useEffect } from "react";
+import $ from 'jquery';
 function Navbar()
 {
+    useEffect(()=>{
+        $(document).ready(function(){
+            setTimeout(function(){ test(); });
+        });
+        $(window).on('resize', function(){
+            setTimeout(function(){ test(); }, 500);
+        });
+        $(".navbar-toggler").click(function(){
+            $(".navbar-collapse").slideToggle(300);
+            setTimeout(function(){ test(); });
+        });
+        
+    },[]);
+    function test(){
+        var tabsNewAnim = $('#navbarSupportedContent');
+        var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+        var activeItemNewAnim = tabsNewAnim.find('.active');
+        var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+        var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+        var itemPosNewAnimTop = activeItemNewAnim.position();
+        var itemPosNewAnimLeft = activeItemNewAnim.position();
+        $(".hori-selector").css({
+            "top":itemPosNewAnimTop.top + "px", 
+            "left":itemPosNewAnimLeft.left + "px",
+            "height": activeWidthNewAnimHeight + "px",
+            "width": activeWidthNewAnimWidth + "px"
+        });
+        $("#navbarSupportedContent").on("click","li",function(e){
+            $('#navbarSupportedContent ul li').removeClass("active");
+            $(this).addClass('active');
+            var activeWidthNewAnimHeight = $(this).innerHeight();
+            var activeWidthNewAnimWidth = $(this).innerWidth();
+            var itemPosNewAnimTop = $(this).position();
+            var itemPosNewAnimLeft = $(this).position();
+            $(".hori-selector").css({
+                "top":itemPosNewAnimTop.top + "px", 
+                "left":itemPosNewAnimLeft.left + "px",
+                "height": activeWidthNewAnimHeight + "px",
+                "width": activeWidthNewAnimWidth + "px"
+            });
+        });
+    }
     return (
         <>
-            <div id="upper_navbar" className="d-flex justify-content-between align-items-center">
-                <div id="upper_navbar_left">
-                    <h5 className="text-white mx-3 my-0">ABCDEF</h5>
-                </div>
-                <div id="upper_navbar_right">
-                    <ul id="upper_navbar_right_list" className="d-flex align-items-center m-0 p-0">
-                        <li className="mx-3"><NavLink to="/">Home</NavLink></li>
-                        <li className="mx-3"><NavLink to="/Knowus">Know Us</NavLink></li>
-                        <li className="mx-3"><NavLink to="/Contact">Get in Touch</NavLink></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="lower_navbar">
-                <div className="container-fluid h-100">
-                    <div className="row h-100">
-                        <div className="col-4 d-flex justify-content-center align-items-center h-100">
-                            <ul className="lower_navbar_list m-0 p-0">
-                                <li className="my-2"><a href="#">Companies</a></li>
-                                <li className="my-2"><a href="#">Coming Soon</a></li>
-                                <li className="my-2"><a href="#">Careers</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-4 d-flex justify-content-center align-items-center h-100">
-                            <ul className="lower_navbar_list m-0 p-0">
-                                <li className="my-2"><a href="#">Business Verticles</a></li>
-                                <li className="my-2"><a href="#">Vision/Mission</a></li>
-                                <li className="my-2"><a href="#">Social Media</a></li>
-                            </ul>
-                        </div>
-                        <div className="col-4 d-flex justify-content-center align-items-center h-100">
-                            <ul className="lower_navbar_list m-0 p-0" style={{'height':'104px'}}>
-                                <li className="my-2"><a href="#">Stay Informed</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <nav className="navbar navbar-expand-custom navbar-mainbg" style={{'marginTop':'31px'}}>
+        <a className="navbar-brand navbar-logo" href="#">Navbar</a>
+        <button className="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i className="fas fa-bars text-white"></i>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ml-auto">
+                <div className="hori-selector"><div className="left"></div><div className="right"></div></div>
+                <li className="nav-item active">
+                <Link className="nav-link" to="/"><i className="far fa-calendar-alt"></i>Home</Link>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/News"><i className="far fa-calendar-alt"></i>News</Link>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/Career"><i className="far fa-calendar-alt"></i>Career</Link>
+                </li>
+                <li className="nav-item">
+                <Link className="nav-link" to="/Contact"><i className="far fa-calendar-alt"></i>Get in Touch</Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/Knowus"><i className="far fa-calendar-alt"></i>Know us</Link>
+                </li>
+            </ul>
+        </div>
+    </nav>
         </>
     );
 }

@@ -13,11 +13,38 @@ import buisnessfive from '../src/assets/buisnessfive.png';
 import buisnessfour from '../src/assets/buisnessfour.png';
 import vision from '../src/assets/vision.png';
 import mission from '../src/assets/mission.png';
+import sliderone from '../src/assets/sliderone.jpg';
+import slidertwo from '../src/assets/slidertwo.jpg';
+import rotateone from '../src/assets/rotateone.jpg';
+import sliderthree from '../src/assets/sliderthree.jpg';
+import rotatetwo from '../src/assets/rotatetwo.png';
+import rotatethree from '../src/assets/rotatethree.png';
+import worldmap from '../src/assets/worldmap.png';
+import sample from '../src/assets/sample.png';
+import sample2 from '../src/assets/sample2.png';
+import visionmain from '../src/assets/visionmain.png';
+import '../src/css/scss/homepage.scss';
+import { useEffect, useState } from "react";
 function Homepage() {
+
+    useEffect(() => {
+        document.querySelector('#toggle-animation').addEventListener('click', classToggle);
+    });
+    function classToggle() {
+        var el = document.querySelector('.icon-cards__content');
+        el.classList.toggle('step-animation');
+    }
+
+
+
+
+
+
+
     return (
         <>
-            <div id="maindiv" className="container-fluid m-0 p-0 w-100">
-                <div className="row w-100 m-0 mt-5 p-0" style={{ 'border': '1px solid #000000' }}>
+            <div id="maindiv" className="container-fluid m-0 p-0">
+                <div className="row m-0 mt-5 p-0" style={{ 'border': '1px solid #000000' }}>
                     <div className="col-4 m-0 p-0">
                         <img className="m-0" src={homepagefirst} alt="" width="100%" />
                     </div>
@@ -32,26 +59,68 @@ function Homepage() {
                 </div>
                 <div className="row m-0 p-0 w-100">
                     <div className="col-12 my-5">
-                        <h2 className="text-black w-100 text-center">Companies</h2>
+                        <h2 className="text-black w-100 text-center text-capitalize">Companies</h2>
                     </div>
-                    <div className="col-4">
-                        <img className="w-100" src={company2} alt="" />
+                    <div className="d-flex justify-content-center flex-column align-items-center my-5">
+                        <figure className="icon-cards mt-3" style={{ 'position': 'relative', 'top': '0px' }}>
+                            <div className="icon-cards__content">
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><span class="h1"><img src={rotateone} width="100%" alt="" /></span></div>
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotatetwo} width="100%" alt="" /></div>
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotatethree} width="100%" alt="" /></div>
+                            </div>
+                        </figure>
+
+                        <div class="checkbox d-none">
+                            <input class="d-none" id="toggle-animation" type="checkbox" checked />
+                            <label class="checkbox__checkbox" for="toggle-animation"></label>
+                            <label class="checkbox__label" for="toggle-animation">Toggle animation</label>
+                        </div>
                     </div>
-                    <div className="col-4">
-                        <img className="w-100" src={company2} alt="" />
+
+
+                </div>
+
+                <div className="row m-0 p-0">
+                    <div className="col-12">
+                        <h3 className="text-black my-5 text-capitalize text-center">Serving Globally</h3>
                     </div>
-                    <div className="col-4">
-                        <img className="w-100" src={company2} alt="" />
+                    <div className="col-12 px-5">
+                        <img className="w-100 img-fluid" src={worldmap} alt="" />
                     </div>
-                    <div className="col-4">
-                        <img className="w-100" src={company5} alt="" />
+                </div>
+
+                <div className="row m-0 p-0">
+                    <div className="col-12">
+                        <h3 className="text-black my-5 text-capitalize text-center">Mission and Vision</h3>
                     </div>
-                    <div className="col-4">
-                        <img className="w-100" src={company5} alt="" />
+                    <div className="row d-flex align-items-center m-0 p-0">
+                        <div className="col-3 m-0 p-0">
+                            <img src={sample2} className="img-fluid" alt="" />
+                        </div>
+                        {/* <div className="col-1"></div> */}
+                        <div className="col-9 m-0 px-2 ">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempora unde maxime repudiandae esse facere amet harum est alias tenetur vero modi in ea dignissimos quam autem dolorem magnam quis, nisi pariatur. Quam, commodi aliquid fugiat accusamus quibusdam mollitia! Voluptate labore tenetur rerum saepe veritatis porro, earum expedita totam? Facere.
+                        </div>
+
+
+
+                        {/* <div className="col-1"></div> */}
+                        <div className="col-9 m-0 px-2">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempora unde maxime repudiandae esse facere amet harum est alias tenetur vero modi in ea dignissimos quam autem dolorem magnam quis, nisi pariatur. Quam, commodi aliquid fugiat accusamus quibusdam mollitia! Voluptate labore tenetur rerum saepe veritatis porro, earum expedita totam? Facere.
+                        </div>
+                        <div className="col-3 m-0 p-0 d-flex justify-content-end">
+                            <img src={sample} className="img-fluid" alt="" />
+                        </div>
                     </div>
-                    <div className="col-4">
-                        <img className="w-100" src={company5} alt="" />
+                </div>
+
+                <div className="row mx-0 p-0 my-5">
+                    <div className="col-12">
+                        <img className="w-100 img-fluid" src={visionmain} alt="" />
                     </div>
+                </div>
+
+                <div className="row m-0 p-0">
                     <div className="col-12 mt-5 mb-5">
                         <h2 className="text-black w-100 text-center">Coming Soon</h2>
                     </div>
@@ -66,9 +135,39 @@ function Homepage() {
                             </p>
                         </div>
                     </div>
-
                 </div>
-                <div className="row m-0 p-0 w-100">
+
+
+                <div className="row mx-0 my-5 w-100 p-0 d-flex justify-content-center">
+                    <div className="col-11 mb-5 d-flex justify-content-center">
+                        <div className="w-100 rounded d-flex flex-column align-items-center justify-content-center py-3 px-5" style={{ 'backgroundColor': 'black' }}>
+                            <h3 className="text-white my-3">Stay Informed</h3>
+                            <input placeholder="Email Address" className="w-100 bg-transparent" style={{ 'borderBottom': '1px solid #FFFFFF !important', 'borderLeft': '0px', 'borderRight': '0px', 'borderTop': '0px' }} type="text" />
+                        </div>
+                    </div>
+                </div>
+
+
+
+                {/* slider section */}
+            </div>
+
+        </>
+    );
+}
+
+export default Homepage;
+
+
+
+
+
+
+
+
+
+
+{/* <div className="row m-0 p-0 w-100">
                     <div className="col-12 my-5">
                         <h2 className="text-black w-100 text-center">Companies</h2>
                     </div>
@@ -170,29 +269,15 @@ function Homepage() {
                         <h2 className="text-black w-100 text-center">Social Media</h2>
                     </div>
                     <div className="col-4 d-flex justify-content-center align-items-center flex-column">
-                        <h3 style={{'color':'#EA8A32'}}>Twitter</h3>
-                        <div style={{'width':'75%','height':'400px','backgroundColor':'#C4C4C4','borderRadius':'10px'}}></div>
+                        <h3 style={{ 'color': '#EA8A32' }}>Twitter</h3>
+                        <div style={{ 'width': '75%', 'height': '400px', 'backgroundColor': '#C4C4C4', 'borderRadius': '10px' }}></div>
                     </div>
                     <div className="col-4 d-flex justify-content-center align-items-center flex-column">
-                        <h3 style={{'color':'#EA8A32'}}>Facebook</h3>
-                        <div style={{'width':'75%','height':'400px','backgroundColor':'#C4C4C4','borderRadius':'10px'}}></div>
+                        <h3 style={{ 'color': '#EA8A32' }}>Facebook</h3>
+                        <div style={{ 'width': '75%', 'height': '400px', 'backgroundColor': '#C4C4C4', 'borderRadius': '10px' }}></div>
                     </div>
                     <div className="col-4 d-flex justify-content-center align-items-center flex-column">
-                        <h3 style={{'color':'#EA8A32'}}>Instagram</h3>
-                        <div style={{'width':'75%','height':'400px','backgroundColor':'#C4C4C4','borderRadius':'10px'}}></div>
+                        <h3 style={{ 'color': '#EA8A32' }}>Instagram</h3>
+                        <div style={{ 'width': '75%', 'height': '400px', 'backgroundColor': '#C4C4C4', 'borderRadius': '10px' }}></div>
                     </div>
-                </div>
-                <div className="row mx-0 my-5 w-100 p-0 d-flex justify-content-center">
-                    <div className="col-11 mb-5 d-flex justify-content-center">
-                        <div className="w-100 rounded d-flex flex-column align-items-center justify-content-center py-3 px-5" style={{'backgroundColor':'black'}}>
-                            <h3 className="text-white my-3">Stay Informed</h3>
-                            <input placeholder="Email Address" className="w-100 bg-transparent" style={{'borderBottom':'1px solid #FFFFFF !important','borderLeft':'0px','borderRight':'0px','borderTop':'0px'}} type="text" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-}
-
-export default Homepage;
+                </div> */}
