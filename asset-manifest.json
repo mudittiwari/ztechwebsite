@@ -1,29 +1,38 @@
 {
   "files": {
-    "main.css": "/ztechwebsite/static/css/main.c1f3b245.css",
-    "main.js": "/ztechwebsite/static/js/main.91a09605.js",
-    "static/media/homepagefirst.png": "/ztechwebsite/static/media/homepagefirst.e4fae8f108839c8005d4.png",
+    "main.css": "/ztechwebsite/static/css/main.ba3ecfa1.css",
+    "main.js": "/ztechwebsite/static/js/main.00c82bb6.js",
+    "static/media/homepagefirst.png": "/ztechwebsite/static/media/homepagefirst.ec03190c303569f68a49.png",
     "static/media/whoareweone.png": "/ztechwebsite/static/media/whoareweone.96f8580a91681d5c5ceb.png",
     "static/media/journeytwo.png": "/ztechwebsite/static/media/journeytwo.cfa0642740c8e4c255d3.png",
     "static/media/whoarewetwo.png": "/ztechwebsite/static/media/whoarewetwo.5fd22bb624027fae65b1.png",
     "static/media/homepagebackground.png": "/ztechwebsite/static/media/homepagebackground.eadbcebd5942d3137c68.png",
+    "static/media/slidertwo.jpg": "/ztechwebsite/static/media/slidertwo.3da2fbec7ef2453f3584.jpg",
     "static/media/journey.png": "/ztechwebsite/static/media/journey.23000195030dd2f7bf87.png",
     "static/media/company5.png": "/ztechwebsite/static/media/company5.4896f33793d94ee34e06.png",
     "static/media/map.png": "/ztechwebsite/static/media/map.61c5a54007d56ee0a63d.png",
+    "static/media/sliderone.jpg": "/ztechwebsite/static/media/sliderone.d5f50d00830853f20365.jpg",
+    "static/media/sliderthree.jpg": "/ztechwebsite/static/media/sliderthree.0d5ff3d812d7dce78f0f.jpg",
     "static/media/company1.png": "/ztechwebsite/static/media/company1.937969ca656d3b0dd886.png",
     "static/media/comingsoon.png": "/ztechwebsite/static/media/comingsoon.58118e2219c3de246023.png",
     "static/media/company2.png": "/ztechwebsite/static/media/company2.bf22da62620b79ccaed1.png",
     "static/media/mission.png": "/ztechwebsite/static/media/mission.4a3aefeeb62d3516f478.png",
     "static/media/vision.png": "/ztechwebsite/static/media/vision.19acd647f0da1b8ab522.png",
+    "static/media/worldmap.png": "/ztechwebsite/static/media/worldmap.ec15657507a9821c284e.png",
     "static/media/buisnessfour.png": "/ztechwebsite/static/media/buisnessfour.aa32269b772a8ce77fbe.png",
     "static/media/buisnessone.png": "/ztechwebsite/static/media/buisnessone.5278ca9423cab4aacd0b.png",
     "static/media/founder.png": "/ztechwebsite/static/media/founder.e5e2bbd0a9bd0923fc2f.png",
+    "static/media/sample.png": "/ztechwebsite/static/media/sample.2fb44f521a0bd6c506d6.png",
+    "static/media/sample2.png": "/ztechwebsite/static/media/sample2.66017f59596688335805.png",
+    "static/media/rotatethree.png": "/ztechwebsite/static/media/rotatethree.e87b8bca3b45e0c1ad92.png",
+    "static/media/visionmain.png": "/ztechwebsite/static/media/visionmain.223141287cba490d4384.png",
+    "static/media/rotateone.jpg": "/ztechwebsite/static/media/rotateone.836bc2b0bce5f3dfa784.jpg",
     "index.html": "/ztechwebsite/index.html",
-    "main.c1f3b245.css.map": "/ztechwebsite/static/css/main.c1f3b245.css.map",
-    "main.91a09605.js.map": "/ztechwebsite/static/js/main.91a09605.js.map"
+    "main.ba3ecfa1.css.map": "/ztechwebsite/static/css/main.ba3ecfa1.css.map",
+    "main.00c82bb6.js.map": "/ztechwebsite/static/js/main.00c82bb6.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1f3b245.css",
-    "static/js/main.91a09605.js"
+    "static/css/main.ba3ecfa1.css",
+    "static/js/main.00c82bb6.js"
   ]
 }
