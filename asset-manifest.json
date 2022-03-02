@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ztechwebsite/static/css/main.924b404d.css",
-    "main.js": "/ztechwebsite/static/js/main.2330563b.js",
+    "main.js": "/ztechwebsite/static/js/main.1e9de1a1.js",
     "static/media/homepagefirst.png": "/ztechwebsite/static/media/homepagefirst.ec03190c303569f68a49.png",
     "static/media/whoareweone.png": "/ztechwebsite/static/media/whoareweone.96f8580a91681d5c5ceb.png",
     "static/media/journeytwo.png": "/ztechwebsite/static/media/journeytwo.cfa0642740c8e4c255d3.png",
@@ -34,10 +34,10 @@
     "static/media/Mission.png": "/ztechwebsite/static/media/Mission.73ee80548ba4dd928891.png",
     "index.html": "/ztechwebsite/index.html",
     "main.924b404d.css.map": "/ztechwebsite/static/css/main.924b404d.css.map",
-    "main.2330563b.js.map": "/ztechwebsite/static/js/main.2330563b.js.map"
+    "main.1e9de1a1.js.map": "/ztechwebsite/static/js/main.1e9de1a1.js.map"
   },
   "entrypoints": [
     "static/css/main.924b404d.css",
-    "static/js/main.2330563b.js"
+    "static/js/main.1e9de1a1.js"
   ]
 }
