@@ -3,6 +3,7 @@ import React from "react";
 function News() {
     return (
         <>
+            <div id="maindiv" style={{ 'position': 'relative', "top": '250px' }}>
             <div className="container-fluid">
                 <div className="row m-0 p-0">
                     <div className="col-12 p-0 mx-0 my-3">
@@ -89,6 +90,15 @@ function News() {
                         </div>
                     </div>
                 </div>
+                <div className="row mx-0 my-5 w-100 p-0 d-flex justify-content-center">
+                    <div className="col-11 mb-5 d-flex justify-content-center">
+                        <div className="w-100 rounded d-flex flex-column align-items-center justify-content-center py-3 px-5" style={{ 'backgroundColor': 'black' }}>
+                            <h3 className="text-white my-3">Stay Informed</h3>
+                            <input placeholder="Email Address" className="w-100 bg-transparent" style={{ 'borderBottom': '1px solid #FFFFFF !important', 'borderLeft': '0px', 'borderRight': '0px', 'borderTop': '0px' }} type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </>
     );

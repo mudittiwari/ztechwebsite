@@ -75,3 +75,13 @@
         right: 0vw;
     }
 }
+
+
+.carousel-indicators [data-bs-target] {
+    width: 10px !important;
+    height: 10px !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px !important;
+    background-color: #EA8A32 !important;
+  }                                               
+

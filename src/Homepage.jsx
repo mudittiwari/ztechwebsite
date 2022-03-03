@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import '../src/css/Homepage.css';
 import homepagefirst from '../src/assets/homepagefirst.png';
 import company1 from '../src/assets/company1.png';
@@ -11,11 +11,11 @@ import buisnessone from '../src/assets/buisnessone.png';
 import buisnessthree from '../src/assets/buisnessthree.png';
 import buisnessfive from '../src/assets/buisnessfive.png';
 import buisnessfour from '../src/assets/buisnessfour.png';
-import vision from '../src/assets/vision.png';
-import mission from '../src/assets/mission.png';
+import vision from '../src/assets/Vision.png';
+import mission from '../src/assets/Mission.png';
 import sliderone from '../src/assets/sliderone.jpg';
 import slidertwo from '../src/assets/slidertwo.jpg';
-import rotateone from '../src/assets/rotateone.jpg';
+import rotateone from '../src/assets/rotateone.png';
 import sliderthree from '../src/assets/sliderthree.jpg';
 import rotatetwo from '../src/assets/rotatetwo.png';
 import rotatethree from '../src/assets/rotatethree.png';
@@ -25,10 +25,36 @@ import sample2 from '../src/assets/sample2.png';
 import visionmain from '../src/assets/visionmain.png';
 import '../src/css/scss/homepage.scss';
 import { useEffect, useState } from "react";
+import { Carousel } from "react-bootstrap";
+import Homepageslider from "./homepageslider";
 function Homepage() {
-
+    // var posi='-400px';
+    const [posi, changeposi] = useState("-400px");
+    const [posi2, changeposi2] = useState("400px");
+    const containerRef = useRef(null);
+    const [isvisible, setvisible] = useState(false);
+    const callbackfun = (entries) => {
+        const [entry] = entries;
+        setvisible(entry.isIntersecting);
+        if (isvisible) {
+            if (posi == '-400px') {
+                changeposi("0px")
+                changeposi2("0px");
+            }
+        }
+    }
+    const option = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.5
+    }
     useEffect(() => {
         document.querySelector('#toggle-animation').addEventListener('click', classToggle);
+        const observer = new IntersectionObserver(callbackfun, option);
+        if (containerRef.current) observer.observe(containerRef.current)
+        return () => {
+            if (containerRef.current) observer.unobserve(containerRef.current)
+        }
     });
     function classToggle() {
         var el = document.querySelector('.icon-cards__content');
@@ -44,7 +70,7 @@ function Homepage() {
     return (
         <>
             <div id="maindiv" className="container-fluid m-0 p-0">
-                <div className="row m-0 mt-5 p-0" style={{ 'border': '1px solid #000000' }}>
+                <div className="row m-0 mt-5 p-0 d-none d-md-block" style={{ 'border': '1px solid #000000' }}>
                     <div className="col-4 m-0 p-0">
                         <img className="m-0" src={homepagefirst} alt="" width="100%" />
                     </div>
@@ -57,14 +83,49 @@ function Homepage() {
                         </div>
                     </div>
                 </div>
+
+
+
+                <div className="row m-0 mt-5 p-0 d-block d-md-none" style={{ 'border': '1px solid #000000' }}>
+                    <div className="col-12 mt-3"><div className="px-3">
+                        <h3 className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                    </div></div>
+                    <div className="col-12 m-0 p-0">
+                        <img className="m-0" src={homepagefirst} alt="" width="100%" />
+                    </div>
+                    <div className="col-12 d-flex flex-column m-0 p-0 justify-content-center">
+
+                        <div className="px-3 mb-4">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper consectetur fringilla gravida pellentesque massa. At lorem ullamcorper mi tristique nec bibendum tempus augue. Tincidunt dolor curabitur leo vulputate interdum sit ultrices massa nunc. Ipsum diam tempor diam sagittis, sed aliquam. Mauris accumsan facilisi aenean pretium.
+                        </div>
+                    </div>
+                </div>
                 <div className="row m-0 p-0 w-100">
-                    <div className="col-12 my-5">
+                    <div className="col-12 my-5 d-md-block d-none">
                         <h2 className="text-black w-100 text-center text-capitalize">Companies</h2>
                     </div>
-                    <div className="d-flex justify-content-center flex-column align-items-center my-5">
+                    <div className="col-12 mt-4 d-md-none d-block">
+                        <h2 className="text-black w-100 text-center text-capitalize">Companies</h2>
+                    </div>
+                    <div className="d-md-flex justify-content-center flex-column align-items-center my-5 d-none">
                         <figure className="icon-cards mt-3" style={{ 'position': 'relative', 'top': '0px' }}>
                             <div className="icon-cards__content">
-                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><span class="h1"><img src={rotateone} width="100%" alt="" /></span></div>
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotateone} width="100%" alt="" /></div>
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotatetwo} width="100%" alt="" /></div>
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotatethree} width="100%" alt="" /></div>
+                            </div>
+                        </figure>
+
+                        <div class="checkbox d-none">
+                            <input class="d-none" id="toggle-animation" type="checkbox" checked />
+                            <label class="checkbox__checkbox" for="toggle-animation"></label>
+                            <label class="checkbox__label" for="toggle-animation">Toggle animation</label>
+                        </div>
+                    </div>
+                    <div className="d-md-none justify-content-center flex-column align-items-center mt-3 mb-4 d-flex">
+                        <figure className="icon-cards mt-3" style={{ 'position': 'relative', 'top': '0px' }}>
+                            <div className="icon-cards__content">
+                                <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotateone} width="100%" alt="" /></div>
                                 <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotatetwo} width="100%" alt="" /></div>
                                 <div className="icon-cards__item d-flex align-items-center justify-content-center"><img src={rotatethree} width="100%" alt="" /></div>
                             </div>
@@ -81,7 +142,10 @@ function Homepage() {
                 </div>
 
                 <div className="row m-0 p-0">
-                    <div className="col-12">
+                    <div className="col-12 d-md-none d-block mb-4">
+                        <h3 className="text-black my-3 text-capitalize text-center">Serving Globally</h3>
+                    </div>
+                    <div className="col-12 d-md-block d-none">
                         <h3 className="text-black my-5 text-capitalize text-center">Serving Globally</h3>
                     </div>
                     <div className="col-12 px-5">
@@ -93,55 +157,99 @@ function Homepage() {
                     <div className="col-12">
                         <h3 className="text-black my-5 text-capitalize text-center">Mission and Vision</h3>
                     </div>
-                    <div className="row d-flex align-items-center m-0 p-0">
-                        <div className="col-3 m-0 p-0">
+                    <div className="row m-0 p-0 d-md-none d-flex justify-content-center">
+                        <div className="col-12">
+                            <div className='d-flex justify-content-center align-items-center flex-column'>
+                                <h3 >Mission</h3>
+                                <img className="my-2" src={mission} alt="" style={{'marginLeft':'17px'}} />
+                                <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi non cupiditate consequuntur beatae maiores repudiandae unde, quasi vitae rem molestias eius nesciunt exercitationem eum at nulla laboriosam minima. Totam, beatae.</p>
+                            </div>
+                        </div>
+                        <div className="col-12 mt-4">
+                            <div className='d-flex justify-content-center align-items-center flex-column'>
+                                <h3 >Mission</h3>
+                                <img className="my-2" src={vision} alt="" style={{'marginLeft':'17px'}} />
+                                <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi non cupiditate consequuntur beatae maiores repudiandae unde, quasi vitae rem molestias eius nesciunt exercitationem eum at nulla laboriosam minima. Totam, beatae.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row d-md-flex align-items-center m-0 p-0 d-none">
+                        <div className="col-3 m-0 p-0 d-flex">
                             <img src={sample2} className="img-fluid" alt="" />
+                            <img src={mission} style={{ 'position': 'relative', 'right': '126px', 'top': '38px', 'height': '75px' }} alt="" />
                         </div>
                         {/* <div className="col-1"></div> */}
                         <div className="col-9 m-0 px-2 ">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempora unde maxime repudiandae esse facere amet harum est alias tenetur vero modi in ea dignissimos quam autem dolorem magnam quis, nisi pariatur. Quam, commodi aliquid fugiat accusamus quibusdam mollitia! Voluptate labore tenetur rerum saepe veritatis porro, earum expedita totam? Facere.
+                            “To be there… Everywhere”
                         </div>
 
 
 
                         {/* <div className="col-1"></div> */}
                         <div className="col-9 m-0 px-2">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempora unde maxime repudiandae esse facere amet harum est alias tenetur vero modi in ea dignissimos quam autem dolorem magnam quis, nisi pariatur. Quam, commodi aliquid fugiat accusamus quibusdam mollitia! Voluptate labore tenetur rerum saepe veritatis porro, earum expedita totam? Facere.
+                            What we see is often in our own grasp. But, the real challenge is to present it innovatively.
+                            We are not here just to Grow or Conquer, We’re here to sustain. We value our customers so much that, we can’t afford mistakes.
+                            Our vision is our Service.
+
                         </div>
                         <div className="col-3 m-0 p-0 d-flex justify-content-end">
+                            {/* <div> */}
                             <img src={sample} className="img-fluid" alt="" />
+                            {/* <img src={vision} className="img-fluid" style={{'position':'relative','right':'194px','top':'30px','height':'75px'}} alt="" /> */}
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>
-
-                <div className="row mx-0 p-0 my-5">
-                    <div className="col-12">
+                <div className="row mx-0 p-0 my-5 d-md-block d-none" ref={containerRef}>
+                    <div className="col-4 d-flex justify-content-end align-items-center">
+                        <p className="p-3" style={{ 'transform': `translateX(${posi})`, 'transition': 'all 1s' }}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt ducimus delectus nam repellat praesentium, exercitationem saepe molestiae temporibus odio vel enim, quisquam illum, ab perspiciatis tempore animi incidunt obcaecati. Impedit sapiente incidunt veniam, minus, laboriosam voluptas, accusamus quam ducimus odio esse ab? Rem est cum vero voluptatem facilis iusto.
+                        </p>
+                    </div>
+                    <div className="col-4 d-flex justify-content-center">
                         <img className="w-100 img-fluid" src={visionmain} alt="" />
+                    </div>
+                    <div className="col-4 d-flex justify-content-start align-items-center">
+                        <p className="p-3" style={{ 'transform': `translateX(${posi2})`, 'transition': 'all 1s' }}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt ducimus delectus nam repellat praesentium, exercitationem saepe molestiae temporibus odio vel enim, quisquam illum, ab perspiciatis tempore animi incidunt obcaecati. Impedit sapiente incidunt veniam, minus, laboriosam voluptas, accusamus quam ducimus odio esse ab? Rem est cum vero voluptatem facilis iusto.
+                        </p>
                     </div>
                 </div>
 
                 <div className="row m-0 p-0">
-                    <div className="col-12 mt-5 mb-5">
-                        <h2 className="text-black w-100 text-center">Coming Soon</h2>
+                    <div className="col-12 mt-5 mb-5 d-md-block d-none">
+                        <h2 className="text-black w-100 text-center text-capitalize">Coming Soon</h2>
                     </div>
-                    <div className="row m-0 p-0" style={{ 'backgroundColor': '#242424' }}>
-                        <div className="col-4 d-flex p-5">
-                            <img src={comingsoon} width='100%' alt="" />
-                        </div>
-                        <div className="col-8 d-flex align-items-center">
-                            <p className="text-white">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, reiciendis! Velit dolor, tempore ab vero, molestias, tenetur magni cupiditate neque debitis totam provident. Necessitatibus molestiae delectus tempora assumenda ducimus optio hic architecto voluptas nulla vel, laudantium omnis dolores a libero nihil nisi fuga impedit aut harum tenetur possimus dolor. Repudiandae recusandae a harum laborum voluptas deleniti distinctio repellendus iure, modi rerum fugiat dicta nesciunt aliquid asperiores nihil! Accusamus, assumenda. Laudantium, vero harum fugiat ab excepturi minus sint cupiditate dolore! Voluptates incidunt quos aspernatur suscipit provident quae minima, repellendus ipsam aperiam laboriosam minus dolorem ullam consequatur! Ut ratione aliquam mollitia libero.
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet, nec in ornare ante. Vulputate porttitor sit mi lectus. Enim sem.
-                            </p>
-                        </div>
+                    <div className="col-12 mt-4 mb-4 d-md-none d-block">
+                        <h2 className="text-black w-100 text-center text-capitalize">Coming Soon</h2>
                     </div>
+
+                    <Carousel controls={false} className="p-0 m-0">
+                        <Carousel.Item>
+                            <Homepageslider />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <Homepageslider />
+                        </Carousel.Item>
+                        <Carousel.Item>
+                            <Homepageslider />
+                        </Carousel.Item>
+                    </Carousel>
+
                 </div>
 
 
                 <div className="row mx-0 my-5 w-100 p-0 d-flex justify-content-center">
                     <div className="col-11 mb-5 d-flex justify-content-center">
-                        <div className="w-100 rounded d-flex flex-column align-items-center justify-content-center py-3 px-5" style={{ 'backgroundColor': 'black' }}>
+                        <div className="w-100 rounded d-md-flex flex-column align-items-center justify-content-center py-3 px-5 d-none" style={{ 'backgroundColor': 'black' }}>
                             <h3 className="text-white my-3">Stay Informed</h3>
+                            <input placeholder="Email Address" className="w-100 bg-transparent" style={{ 'borderBottom': '1px solid #FFFFFF !important', 'borderLeft': '0px', 'borderRight': '0px', 'borderTop': '0px' }} type="text" />
+                        </div>
+
+
+
+                        <div className="w-100 rounded d-flex d-md-none flex-column align-items-center justify-content-center py-3 px-4" style={{ 'backgroundColor': 'black' }}>
+                            <h3 className="text-white mb-3 mt-2">Stay Informed</h3>
                             <input placeholder="Email Address" className="w-100 bg-transparent" style={{ 'borderBottom': '1px solid #FFFFFF !important', 'borderLeft': '0px', 'borderRight': '0px', 'borderTop': '0px' }} type="text" />
                         </div>
                     </div>
