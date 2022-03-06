@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../src/css/Navbar.css';
+import ham from '../src/assets/hamburger.jpg'
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import Navlink from 'react-router-dom';
@@ -57,8 +58,8 @@ function Navbar() {
         <>
             <nav className="navbar navbar-expand-md navbar-mainbg">
                 <a className="navbar-brand navbar-logo fw-bolder" href="#">Zuluoneintheworld</a>
-                <button className="navbar-toggler bg-white" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <button className="navbar-toggler mx-1" id="hamburger" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" style={{'height':'50px','width':'50px'}}><img src={ham} height="100%" width="100%" alt="" /></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto d-flex justify-content-end w-100">

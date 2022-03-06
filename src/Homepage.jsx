@@ -70,7 +70,7 @@ function Homepage() {
     return (
         <>
             <div id="maindiv" className="container-fluid m-0 p-0">
-                <div className="row m-0 mt-5 p-0 d-none d-md-block" style={{ 'border': '1px solid #000000' }}>
+                <div className="row m-0 mt-5 p-0 d-none d-md-flex" style={{ 'border': '1px solid #000000' }}>
                     <div className="col-4 m-0 p-0">
                         <img className="m-0" src={homepagefirst} alt="" width="100%" />
                     </div>
@@ -200,7 +200,7 @@ function Homepage() {
                         </div>
                     </div>
                 </div>
-                <div className="row mx-0 p-0 my-5 d-md-block d-none" ref={containerRef}>
+                <div className="row mx-0 p-0 my-5 d-md-flex d-none" ref={containerRef}>
                     <div className="col-4 d-flex justify-content-end align-items-center">
                         <p className="p-3" style={{ 'transform': `translateX(${posi})`, 'transition': 'all 1s' }}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit sunt ducimus delectus nam repellat praesentium, exercitationem saepe molestiae temporibus odio vel enim, quisquam illum, ab perspiciatis tempore animi incidunt obcaecati. Impedit sapiente incidunt veniam, minus, laboriosam voluptas, accusamus quam ducimus odio esse ab? Rem est cum vero voluptatem facilis iusto.
@@ -217,7 +217,7 @@ function Homepage() {
                 </div>
 
                 <div className="row m-0 p-0">
-                    <div className="col-12 mt-5 mb-5 d-md-block d-none">
+                    <div className="col-12 mt-5 mb-5 d-md-flex d-none">
                         <h2 className="text-black w-100 text-center text-capitalize">Coming Soon</h2>
                     </div>
                     <div className="col-12 mt-4 mb-4 d-md-none d-block">
