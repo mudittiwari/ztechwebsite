@@ -6,9 +6,11 @@ import whoarewetwo from '../src/assets/whoarewetwo.png';
 import journey from '../src/assets/journey.png';
 import journeytwo from '../src/assets/journeytwo.png';
 import founder from '../src/assets/founder.png';
+import Mainslider from './Mainslider.jsx';
 function Knowus() {
     return (
         <>
+            <Mainslider />
             <div id='maindiv'>
                 <div className='container-fluid m-0 p-0'>
                     <div className='row p-3'>
@@ -114,7 +116,7 @@ function Knowus() {
                             </div>
                         </div>
                     </div>
-                    <div className="row mx-0 w-100 d-flex justify-content-center">
+                    <div className="row mx-0 w-100 d-flex justify-content-center my-5">
                         <div className="col-11 mb-5 d-flex justify-content-center">
                             <div className="w-100 rounded d-flex flex-column align-items-center justify-content-center py-3 px-5" style={{ 'backgroundColor': 'black' }}>
                                 <h3 className="text-white my-3">Stay Informed</h3>

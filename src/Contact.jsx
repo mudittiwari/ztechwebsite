@@ -4,10 +4,12 @@ import whatsapp from '../src/assets/whatsapp.png';
 import message from '../src/assets/message.png';
 import call from '../src/assets/call.png';
 import map from '../src/assets/map.png';
+import Mainslider from './Mainslider';
 function Contact() {
     return (
         <>
-            <div id='maindiv' className='my-5 d-md-block d-none'>
+        <Mainslider />
+            <div id='maindiv' className='my-5 pt-5 d-md-block d-none'>
                 <div className='container-fluid'>
                     <div className='row'>
                         <div className='col-12 d-md-flex d-none'>
@@ -66,7 +68,7 @@ function Contact() {
                     </div>
                 </div>
             </div>
-            <div className='my-5 p-0 d-md-none d-block'>
+            <div className='my-5 p-0 d-md-none d-block' style={{'position':'relative','top':'600px'}}>
                 <div className='container-fluid p-0'>
                     <div className='row m-0 p-0'>
                         <div className='col-12 d-md-flex d-none'>

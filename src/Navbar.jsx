@@ -56,7 +56,7 @@ function Navbar() {
     }
     return (
         <>
-            <nav className="navbar navbar-expand-md navbar-mainbg">
+            <nav className="navbar navbar-expand-md navbar-mainbg" style={{'z-index':'1'}}>
                 <a className="navbar-brand navbar-logo fw-bolder" href="#">Zuluoneintheworld</a>
                 <button className="navbar-toggler mx-1" id="hamburger" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon" style={{'height':'50px','width':'50px'}}><img src={ham} height="100%" width="100%" alt="" /></span>

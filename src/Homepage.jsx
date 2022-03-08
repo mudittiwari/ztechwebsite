@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { Fragment, useRef } from "react";
 import '../src/css/Homepage.css';
 import homepagefirst from '../src/assets/homepagefirst.png';
 import company1 from '../src/assets/company1.png';
@@ -27,8 +27,12 @@ import '../src/css/scss/homepage.scss';
 import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import Homepageslider from "./homepageslider";
+import Mainslider from "./Mainslider";
+import coming_soontwo from '../src/assets/coming_soonone.jpg';
+import coming_soonone from '../src/assets/coming_soontwo.png';
 function Homepage() {
     // var posi='-400px';
+    // const contenttwo = ;
     const [posi, changeposi] = useState("-400px");
     const [posi2, changeposi2] = useState("400px");
     const containerRef = useRef(null);
@@ -69,7 +73,11 @@ function Homepage() {
 
     return (
         <>
-            <div id="maindiv" className="container-fluid m-0 p-0">
+            {/* <div className="d-md-block d-none"> */}
+            <Mainslider />
+            {/* </div> */}
+            <div id="maindiv" className="container-fluid m-0 p-0 mt-5 pt-1">
+                
                 <div className="row m-0 mt-5 p-0 d-none d-md-flex" style={{ 'border': '1px solid #000000' }}>
                     <div className="col-4 m-0 p-0">
                         <img className="m-0" src={homepagefirst} alt="" width="100%" />
@@ -226,13 +234,12 @@ function Homepage() {
 
                     <Carousel controls={false} className="p-0 m-0">
                         <Carousel.Item>
-                            <Homepageslider />
+                            <Homepageslider name={coming_soonone} content={<Fragment>Pen down your originals...<br/>Paint your hopes.<br/>Bring it to the imagination,<br/>We're here folks.<br/>ZVR coming soon...<br/></Fragment>}/>
                         </Carousel.Item>
                         <Carousel.Item>
-                            <Homepageslider />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Homepageslider />
+                            <Homepageslider name={coming_soontwo} content={<Fragment>Z-TRON:<br />
+Still worried about the fantasy of robots taking all over the world. Well, that might happen but why not use it to advance the Mankind.
+Z-TRON… coming soon.</Fragment>}/>
                         </Carousel.Item>
                     </Carousel>
 

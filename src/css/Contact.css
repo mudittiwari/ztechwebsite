@@ -8,6 +8,12 @@
     left: 50px;
     z-index: 1;
 }
+#maindiv
+{
+    left: 0px;
+    position: relative;
+    top: 650px;
+}
 #rightcontact
 {
     position: relative;

@@ -6,10 +6,12 @@ import a4 from '../src/assets/a4.png';
 import a5 from '../src/assets/a5.png';
 import a6 from '../src/assets/a6.png';
 import a7 from '../src/assets/a7.png';
+import Mainslider from "./Mainslider";
 function Career() {
     return (
         <>
-            <div id="maindiv">
+            <Mainslider / >
+            <div id="maindiv" style={{'position':'relative','top':'700px'}}>
             <div className="container-fluid p-0">
                 <div className="row">
 
@@ -117,7 +119,7 @@ function Career() {
                         </div>
                         </div>
                     </div>
-                    <div className="row mx-0 my-5 w-100 p-0 d-flex justify-content-center">
+                    <div className="row mx-0 my-5 w-100 p-0 d-flex justify-content-center pb-5">
                         <div className="col-11 d-flex justify-content-center mb-5">
                             <div className="w-100 rounded d-flex flex-column align-items-center justify-content-center py-3 px-5" style={{ 'backgroundColor': 'black' }}>
                                 <h3 className="text-white my-3">Stay Informed</h3>
