@@ -11,7 +11,7 @@ function Knowus() {
     return (
         <>
             <Mainslider />
-            <div id='maindiv'>
+            <div id='maindiv' style={{'position':'relative','top':'725px'}}>
                 <div className='container-fluid m-0 p-0'>
                     <div className='row p-3'>
                         <div className='col-12 d-md-none d-block'>
