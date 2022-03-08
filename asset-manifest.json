@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ztechwebsite/static/css/main.f6471064.css",
-    "main.js": "/ztechwebsite/static/js/main.216cafec.js",
+    "main.css": "/ztechwebsite/static/css/main.7bb406fb.css",
+    "main.js": "/ztechwebsite/static/js/main.390d9d3a.js",
     "static/media/homepagefirst.png": "/ztechwebsite/static/media/homepagefirst.ec03190c303569f68a49.png",
     "static/media/whoareweone.png": "/ztechwebsite/static/media/whoareweone.96f8580a91681d5c5ceb.png",
     "static/media/journeytwo.png": "/ztechwebsite/static/media/journeytwo.cfa0642740c8e4c255d3.png",
@@ -26,6 +26,7 @@
     "static/media/a7.png": "/ztechwebsite/static/media/a7.c215315a5261d19248fc.png",
     "static/media/a5.png": "/ztechwebsite/static/media/a5.1714a4a04de42984b80b.png",
     "static/media/visionmain.png": "/ztechwebsite/static/media/visionmain.262f8f79970ecb9dbee3.png",
+    "static/media/coming_soonone.jpg": "/ztechwebsite/static/media/coming_soonone.836bc2b0bce5f3dfa784.jpg",
     "static/media/a1.png": "/ztechwebsite/static/media/a1.fc4473cb22996854a5ed.png",
     "static/media/a4.png": "/ztechwebsite/static/media/a4.1abab1eb9cb8021211cd.png",
     "static/media/a3.png": "/ztechwebsite/static/media/a3.1f5952aafded764e16fd.png",
@@ -33,11 +34,11 @@
     "static/media/rotatetwo.png": "/ztechwebsite/static/media/rotatetwo.068d1d000a13ec5e7f8b.png",
     "static/media/Mission.png": "/ztechwebsite/static/media/Mission.73ee80548ba4dd928891.png",
     "index.html": "/ztechwebsite/index.html",
-    "main.f6471064.css.map": "/ztechwebsite/static/css/main.f6471064.css.map",
-    "main.216cafec.js.map": "/ztechwebsite/static/js/main.216cafec.js.map"
+    "main.7bb406fb.css.map": "/ztechwebsite/static/css/main.7bb406fb.css.map",
+    "main.390d9d3a.js.map": "/ztechwebsite/static/js/main.390d9d3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6471064.css",
-    "static/js/main.216cafec.js"
+    "static/css/main.7bb406fb.css",
+    "static/js/main.390d9d3a.js"
   ]
 }
